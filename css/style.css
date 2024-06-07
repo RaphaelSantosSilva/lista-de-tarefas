@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(155, 155, 2);
+    font-size: 16px;
+    font-family: 'Verdana';
+    color: white;
+}
+
+.todoList {
+    width: 100%;
+    max-width: 600px;
+}
+
+.todoList header {
+    background-color: rgb(75, 1, 75);
+    border-bottom: 2px solid rgb(238, 255, 1);
+    padding: 20px;
+}
+
+.todoList .wrapper-list .list {
+    list-style: none;
+}
+
+.todoList .wrapper-list .list .check {
+    position: relative;
+    margin: 0 15px 0 0;
+    width: 20px;
+    height: 20px;
+    background-color: purple;
+    border-radius: 50%;
+    transition: all 200ms ease;
+}
+
+.todoList .wrapper-list .list .check:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.todoList .wrapper-list .list .done .check:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 169, 0);
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+}
+
+.todoList .wrapper-list .list .remove {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: red;
+    transition: all 200ms ease;
+    opacity: 0;
+}
+
+.todoList .wrapper-list .list .remove:hover {
+    cursor: pointer;
+    background-color: rgb(152, 0, 0);
+}
+
+.todoList .wrapper-list .list li {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    background-color: rgb(185, 8, 185);
+    border-bottom: 2px solid rgb(238, 255, 1);
+    transition: all 200ms ease;
+}
+
+.todoList .wrapper-list .list li:hover {
+    cursor: pointer;
+    background-color: purple;
+}
+
+.todoList .wrapper-list .list li:hover .remove {
+    opacity: 1;
+}
+
+.todoList footer {
+    color: white;
+    padding: 20px;
+    background-color:rgb(75, 1, 75);
+}
+
+.todoList footer input {
+    background-color:rgb(75, 1, 75);
+    color: white;
+    font-family: 'Verdana';
+    font-size: 16px;
+    outline: none;
+    border: none;
+}
+
+.wrapper-list .list li.removed {
+    animation: collapseItem 300ms ease;
+}
+
+.wrapper-list .list li.hidden {
+    display: none;
+}
+
+@keyframes collapseItem {
+    0% {
+        transform: rotateX(0deg);
+    } 100% {
+        transform: rotateX(-90deg);
+    }
+}
+
